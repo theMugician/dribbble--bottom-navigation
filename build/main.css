@@ -1,0 +1,124 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  height: 100%; }
+
+html {
+  background: #5a37b7; }
+
+.container {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100%; }
+
+.navigation {
+  background: #fff;
+  padding: 5.19974rem;
+  display: flex; }
+
+.button {
+  border-radius: 4rem;
+  max-width: 12rem;
+  padding: 2.19856rem 3.79834rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  /*
+  &--home.active {
+    background: $purple-light;
+    .button__icon > * { 
+      stroke: $purple;
+    } 
+    .button__text {
+      color: $purple;
+    }
+  }
+  */ }
+  .button--home.active {
+    background: #dfd7f3; }
+    .button--home.active .button__icon > * {
+      stroke: #5a37b7; }
+    .button--home.active .button__text {
+      color: #5a37b7; }
+  .button--likes.active {
+    background: #f6d6ee; }
+    .button--likes.active .button__icon > * {
+      stroke: #c9379c; }
+    .button--likes.active .button__text {
+      color: #c9379c; }
+  .button--search.active {
+    background: #faebd3; }
+    .button--search.active .button__icon > * {
+      stroke: #e4aa1b; }
+    .button--search.active .button__text {
+      color: #e4aa1b; }
+  .button--profile.active {
+    background: #d2ebef; }
+    .button--profile.active .button__icon > * {
+      stroke: #1194aa; }
+    .button--profile.active .button__text {
+      color: #1194aa; }
+  .button__icon {
+    width: 3.094rem; }
+    .button__icon > * {
+      fill-opacity: 0;
+      stroke: black;
+      stroke-width: 2; }
+  .button__text {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #000;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 1rem; }
+
+/*# sourceMappingURL=main.css.map */

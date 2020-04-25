@@ -1,0 +1,112 @@
+html { 
+  font-size: 62.5%; 
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+$purple: #5a37b7;
+$purple-light: #dfd7f3;
+$pink: #c9379c;
+$pink-light: #f6d6ee;
+$orange: #e4aa1b;
+$orange-light: #faebd3;
+$teal: #1194aa;
+$teal-light: #d2ebef;
+
+$height-nav: 18.2rem;
+
+@mixin nav__height($height) {
+  padding: 0.2857 * $height;
+}
+
+@mixin button__padding($height) {
+  padding: 0.1208 * $height 0.2087 * $height;
+}
+
+@mixin button-icon__width($height) {
+  width: 0.17 * $height;
+}
+
+@mixin button($color,$background-color,$button) {
+  &--#{$button}.active {
+    background: $background-color;
+    .button__icon > * { 
+      stroke: $color;
+    } 
+    .button__text {
+      color: $color;
+    }
+  }
+}
+
+html {
+  background: $purple;
+}
+
+.container {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation {
+  background: #fff;
+  @include nav__height($height-nav);
+  display: flex;
+}
+
+// home
+// likes
+// search
+// profile
+
+.button {
+  border-radius: 4rem;
+  max-width: 12rem;
+  //padding: 1.2rem 2.8rem;
+  @include button__padding($height-nav);  
+  display: flex;
+  align-items: center;
+  background: transparent;
+  /*
+  &--home.active {
+    background: $purple-light;
+    .button__icon > * { 
+      stroke: $purple;
+    } 
+    .button__text {
+      color: $purple;
+    }
+  }
+  */
+  @include button($purple,$purple-light,home);
+  @include button($pink,$pink-light,likes);
+  @include button($orange,$orange-light,search);
+  @include button($teal,$teal-light,profile);
+
+  &__icon {
+    @include button-icon__width($height-nav); 
+    & > * { 
+    fill-opacity: 0;
+    stroke: black; 
+    stroke-width: 2;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #000;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 1rem;
+  } 
+}
+
