@@ -63,6 +63,7 @@ html {
 .navigation {
   background: #fff;
   padding: 5.19974rem;
+  width: 50rem;
   display: flex; }
 
 .button {
@@ -72,41 +73,51 @@ html {
   display: flex;
   align-items: center;
   background: transparent;
-  /*
-  &--home.active {
-    background: $purple-light;
-    .button__icon > * { 
-      stroke: $purple;
-    } 
-    .button__text {
-      color: $purple;
-    }
-  }
-  */ }
+  transition: background 0.25s ease; }
   .button--home.active {
     background: #dfd7f3; }
     .button--home.active .button__icon > * {
       stroke: #5a37b7; }
     .button--home.active .button__text {
-      color: #5a37b7; }
+      width: 4.8rem;
+      visibility: visible;
+      color: #5a37b7;
+      margin-left: 1rem;
+      opacity: 1;
+      transition: margin-left 0.25s ease, width 0.25s ease, opacity 0.15s ease 0.1s, visibility 0.15s ease 0.1s, color 0.25s ease; }
   .button--likes.active {
     background: #f6d6ee; }
     .button--likes.active .button__icon > * {
       stroke: #c9379c; }
     .button--likes.active .button__text {
-      color: #c9379c; }
+      width: 4.8rem;
+      visibility: visible;
+      color: #c9379c;
+      margin-left: 1rem;
+      opacity: 1;
+      transition: margin-left 0.25s ease, width 0.25s ease, opacity 0.15s ease 0.1s, visibility 0.15s ease 0.1s, color 0.25s ease; }
   .button--search.active {
     background: #faebd3; }
     .button--search.active .button__icon > * {
       stroke: #e4aa1b; }
     .button--search.active .button__text {
-      color: #e4aa1b; }
+      width: 4.8rem;
+      visibility: visible;
+      color: #e4aa1b;
+      margin-left: 1rem;
+      opacity: 1;
+      transition: margin-left 0.25s ease, width 0.25s ease, opacity 0.15s ease 0.1s, visibility 0.15s ease 0.1s, color 0.25s ease; }
   .button--profile.active {
     background: #d2ebef; }
     .button--profile.active .button__icon > * {
       stroke: #1194aa; }
     .button--profile.active .button__text {
-      color: #1194aa; }
+      width: 4.8rem;
+      visibility: visible;
+      color: #1194aa;
+      margin-left: 1rem;
+      opacity: 1;
+      transition: margin-left 0.25s ease, width 0.25s ease, opacity 0.15s ease 0.1s, visibility 0.15s ease 0.1s, color 0.25s ease; }
   .button__icon {
     width: 3.094rem; }
     .button__icon > * {
@@ -119,6 +130,43 @@ html {
     color: #000;
     font-weight: bold;
     font-family: sans-serif;
-    margin-left: 1rem; }
+    margin-left: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: margin-left 0.1s ease, width 0.1s ease, visibility 0.1s ease 0.0s, opacity 0.1s ease 0.0s, color 0.1s ease; }
+
+.ripple {
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transform: scale(0);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border-radius: 50%;
+  position: fixed; }
+
+.ripple--home {
+  border: 0.1rem solid #5a37b7; }
+
+.ripple--likes {
+  border: 0.1rem solid #c9379c; }
+
+.ripple--search {
+  border: 0.1rem solid #e4aa1b; }
+
+.ripple--profile {
+  border: 0.1rem solid #1194aa; }
+
+.animate {
+  animation: ripple-mo 0.15s cubic-bezier(0, 0, 0.2, 1); }
+
+@keyframes ripple-mo {
+  0% {
+    transform: scale(0);
+    opacity: 0.5; }
+  100% {
+    transform: scale(10);
+    opacity: 0; } }
 
 /*# sourceMappingURL=main.css.map */
