@@ -21,11 +21,18 @@ function handler(ev) {
   newNode.style.top = ev.clientY - 5 + "px";
   node.parentNode.replaceChild(newNode, node);
 
-  // animate new button
-  if ( clicked !==  active ) {
+  
+  if ( clicked !== active ) {
+
+    // animate new button
   	document.querySelector(`.button--${active}`).classList.remove('active');
   	this.classList.add('active');
-  	active = clicked;
+
+    // animate body background
+    document.querySelector('body').classList.remove(`body--${active}`);
+    document.querySelector('body').classList.add(`body--${clicked}`);
+
+    active = clicked;
   }
 
 }

@@ -46,10 +46,20 @@ html {
   height: 100%; }
 
 body {
-  height: 100%; }
+  height: 100%;
+  transition: all 0.2s ease; }
 
-html {
-  background: #5a37b7; }
+.body--home {
+  background-color: #5a37b7; }
+
+.body--likes {
+  background-color: #c9379c; }
+
+.body--search {
+  background-color: #e4aa1b; }
+
+.body--profile {
+  background-color: #1194aa; }
 
 .container {
   width: 100%;
@@ -63,7 +73,9 @@ html {
 .navigation {
   background: #fff;
   padding: 5.19974rem;
-  width: 50rem;
+  border-bottom-right-radius: 4.55rem;
+  border-bottom-left-radius: 4.55rem;
+  width: 48.5rem;
   display: flex; }
 
 .button {

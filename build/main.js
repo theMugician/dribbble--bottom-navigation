@@ -25,7 +25,11 @@ function handler(ev) {
   if ( clicked !==  active ) {
   	document.querySelector(`.button--${active}`).classList.remove('active');
   	this.classList.add('active');
-  	active = clicked;
+
+    document.querySelector('body').classList.remove(`body--${active}`);
+    document.querySelector('body').classList.add(`body--${clicked}`);
+
+    active = clicked;
   }
 
 }

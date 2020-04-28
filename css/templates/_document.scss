@@ -5,6 +5,7 @@ html {
 
 body {
   height: 100%;
+  transition: all 0.2s ease,
 }
 
 $purple: #5a37b7;
@@ -16,10 +17,15 @@ $orange-light: #faebd3;
 $teal: #1194aa;
 $teal-light: #d2ebef;
 
-$height-nav: 18.2rem;
+$nav-height: 18.2rem;
 
-@mixin nav__height($height) {
+@mixin nav__padding($height) {
   padding: 0.2857 * $height;
+}
+
+@mixin nav__border-radius($height) {
+  border-bottom-right-radius: 0.25 * $height;
+  border-bottom-left-radius: 0.25 * $height;
 }
 
 @mixin button__padding($height) {
@@ -43,20 +49,28 @@ $height-nav: 18.2rem;
       margin-left: 1rem;
       opacity: 1;
       transition: margin-left 0.25s ease,
-                width 0.25s ease,
-                opacity 0.15s ease 0.1s,
-                visibility 0.15s ease 0.1s,
-                color 0.25s ease;    
-      // transition: margin-left 0.1s ease,
-      //             width 0.1s ease,
-      //             visibility 0.1s ease 0.0s,
-      //             color 0.1s ease,
+                  width 0.25s ease,
+                  opacity 0.15s ease 0.1s,
+                  visibility 0.15s ease 0.1s,
+                  color 0.25s ease;
     }
   }
 }
 
-html {
-  background: $purple;
+.body--home {
+  background-color: $purple;
+}
+
+.body--likes {
+  background-color: $pink;
+}
+
+.body--search {
+  background-color: $orange;
+}
+
+.body--profile {
+  background-color: $teal;
 }
 
 .container {
@@ -71,8 +85,9 @@ html {
 
 .navigation {
   background: #fff;
-  @include nav__height($height-nav);
-  width: 50rem;
+  @include nav__padding($nav-height);
+  @include nav__border-radius($nav-height);
+  width: 48.5rem;
   display: flex;
 }
 
@@ -85,7 +100,7 @@ html {
   border-radius: 4rem;
   max-width: 12rem;
   //padding: 1.2rem 2.8rem;
-  @include button__padding($height-nav);  
+  @include button__padding($nav-height);  
   display: flex;
   align-items: center;
   background: transparent;
@@ -97,7 +112,7 @@ html {
   @include button($teal,$teal-light,profile);
 
   &__icon {
-    @include button-icon__width($height-nav); 
+    @include button-icon__width($nav-height); 
     & > * { 
     fill-opacity: 0;
     stroke: black; 
@@ -116,10 +131,10 @@ html {
     opacity: 0;
     visibility: hidden;
     transition: margin-left 0.1s ease,
-            width 0.1s ease,
-            visibility 0.1s ease 0.0s,
-            opacity 0.1s ease 0.0s,
-            color 0.1s ease;     
+                width 0.1s ease,
+                visibility 0.1s ease 0.0s,
+                opacity 0.1s ease 0.0s,
+                color 0.1s ease;     
   } 
 }
 
@@ -151,10 +166,10 @@ html {
 }
 
 .animate {
-  animation: ripple-mo 0.15s cubic-bezier(0, 0, 0.2, 1);
+  animation: ripple-motion 0.15s cubic-bezier(0, 0, 0.2, 1);
 }
 
-@keyframes ripple-mo {
+@keyframes ripple-motion {
   0% {
     transform: scale(0);
     opacity: 0.5;
